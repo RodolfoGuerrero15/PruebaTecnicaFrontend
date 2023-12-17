@@ -191,9 +191,9 @@ const AddOrder = () => {
       const orderData = await orderResponse.json();
       if(orderData.err){
         alert(orderData.err)
-        return
+        return;
       }
-
+      
       //Second fetch to add the new products of the order
       const productsResponse = await fetch("/orders-products", {
         method: "POST",
